@@ -4,43 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
 </head>
 <body>
-    <footer>
-        <div class="footer-logo">
-            <picture>
-                <source srcset="/images/logo-dark.png" media="(prefers-color-scheme: dark)">
-                <img src="/images/logo-light.png" alt="Creative Learning Logo" width="150">
-            </picture>
-            <li>contacto@.com</li>
-            <li>=51 980278893</li>
-            <li>Cerca de ti</li>
-        </div>
-        <div class="footer-links">
-            <h3><a href="index.html">Inicio</a></h3>
-            <ul>
-                <li><a href="">Beneficio</a></li>
-                <li><a href="cursos.html">Nuestros cursos</a></li>
-                <li><a href="">Nuestros testimonios</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-about">
-            <h3><a href="about.html">Acerca de</a></h3>
-            <ul>
-                <li><a href="">Historia</a></li>
-                <li><a href="">Vision</a></li>
-                <li><a href="">Mision</a></li>
-            </ul>
-        </div>
-        <div class="footer-media">
-            <h3>Redes Sociales</h3>
-            <ul>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">LinkedIn</a></li>
-            </ul>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <!-- Columna 1: Logo + datos de contacto -->
+    <section class="footer-col footer-brand" aria-label="Marca y contacto">
+      <a class="footer-logo" href="index.html" aria-label="Ir al inicio">
+        <picture>
+          <source srcset="/images/logo-dark.png" media="(prefers-color-scheme: dark)" />
+          <img src="/images/logo-light.png" alt="Creative Learning" width="150" />
+        </picture>
+      </a>
+
+      <ul class="footer-contact">
+        <li>
+          <span class="label">Email:</span>
+          <a href="mailto:contacto@tudominio.com">contacto@tudominio.com</a>
+        </li>
+        <li>
+          <span class="label">Teléfono:</span>
+          <a href="tel:+51980278893">+51 980 278 893</a>
+        </li>
+        <li>
+          <span class="label">Dirección:</span>
+          <span>Cerca de ti</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Columna 2: Links rápidos -->
+    <nav class="footer-col" aria-label="Enlaces rápidos">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cursos.html">Nuestros cursos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Columna 3: Nuestros cursos (se llena con JS) -->
+    <nav class="footer-col" aria-label="Nuestros cursos">
+        <h3 class="footer-title">Nuestros cursos</h3>
+        <ul class="footer-list" id="footerCoursesList"></ul>
+    </nav>
+
+
+    <!-- Columna 4: Acerca de -->
+    <nav class="footer-col" aria-label="Acerca de">
+      <h3 class="footer-title">Acerca de</h3>
+      <ul class="footer-list">
+        <li><a href="about.html">Quiénes somos</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="mision.html">Misión</a></li>
+      </ul>
+    </nav>
+
+    <!-- Columna 5: Redes -->
+    <section class="footer-col" aria-label="Redes sociales">
+      <h3 class="footer-title">Follow Us</h3>
+
+      <div class="social">
+        <!-- Puedes cambiar los href por tus links reales -->
+        <a class="social-btn" href="#" aria-label="Facebook" title="Facebook">
+          <!-- Icono SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.6 1.6-1.6H16.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.5v8h4z"/>
+          </svg>
+        </a>
+
+        <a class="social-btn" href="#" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.9 3H21l-6.6 7.5L22 21h-6.2l-4.9-6.1L5.6 21H3.5l7.1-8.1L2 3h6.3l4.4 5.6L18.9 3zm-1.1 16h1.2L7.9 4.9H6.6L17.8 19z"/>
+          </svg>
+        </a>
+
+        <a class="social-btn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+          </svg>
+        </a>
+
+        <a class="social-btn" href="#" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.5 6.9A1.9 1.9 0 1 1 6.5 3a1.9 1.9 0 0 1 0 3.9zM4.8 21V8.2h3.4V21H4.8zM10 21V8.2h3.3v1.7h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5V21h-3.4v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H10z"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© <span id="year"></span> Creative Learning. Todos los derechos reservados.</p>
+
+      <!-- “Páginas” (links de pie, opcional) -->
+      <ul class="footer-bottom-links" aria-label="Enlaces legales">
+        <li><a href="/public/privacidad/terminos.html">Términos</a></li>
+        <li><a href="/public/privacidad/privacidad.html">Privacidad</a></li>
+        <li><a href="/public/privacidad/cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Opcional: año automático (mínimo JS; si no quieres JS, escribe el año fijo) -->
+<!-- Carga tu JS al final del body (importante) -->
+<script src="../src/js/footer.js" defer></script>
+
+</body>
 </html>

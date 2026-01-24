@@ -1,22 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-    ,<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Navegación</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav>
-            
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a>Cursos</a></li>
-                <li><a href="planes.html">Planes</a></li>
-                <li><a href="contact.html">Contacto</a></li>  
-            </ul>
-        
-        </nav>
-    </body>      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navegación</title>
+
+    <link rel="stylesheet" href="../src/css/nav.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Navegación principal">
+
+    <!-- Logo -->
+    <a class="nav-brand" href="index.html" aria-label="Ir al inicio">
+      <!-- Cambia la ruta si tu logo está en otro lugar -->
+      <img src="/images/logo-light.png" alt="Bole" />
+    </a>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Abrir menú"
+      aria-controls="navDrawer"
+      aria-expanded="false"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Menú Desktop -->
+    <ul class="nav-links" id="navLinks">
+      <li><a class="nav-link" href="index.html">Inicio</a></li>
+
+      <!-- ACERCA DE (FIJO) -->
+      <li class="nav-item-dropdown" id="aboutDropdown">
+        <button class="nav-link nav-link-btn" id="aboutBtn" aria-expanded="false" aria-haspopup="true">
+          Acerca de <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <ul class="dropdown" aria-label="Acerca de">
+          <li><a href="about.html">Quiénes somos</a></li>
+          <li><a href="mision.html">Misión</a></li>
+          <li><a href="vision.html">Visión</a></li>
+        </ul>
+      </li>
+
+      <!-- CURSOS (DINÁMICO JS) -->
+      <li class="nav-item-dropdown" id="coursesDropdown">
+        <button class="nav-link nav-link-btn" id="coursesBtn" aria-expanded="false" aria-haspopup="true">
+          Cursos <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <ul class="dropdown" id="coursesMenu" aria-label="Lista de cursos">
+          <!-- JS llena esto -->
+        </ul>
+      </li>
+
+      <li><a class="nav-link" href="planes.html">Planes</a></li>
+      <li><a class="nav-link" href="contact.html">Contacto</a></li>
+    </ul>
+
+    <!-- CTA derecha (desktop) -->
+    <a class="nav-cta" href="login.html">
+      <span class="cta-icon" aria-hidden="true">↪</span>
+      Inicia sesión / Regístrate
+    </a>
+
+  </nav>
+</header>
+
+<!-- Overlay + Drawer móvil -->
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="drawer" id="navDrawer" aria-label="Menú lateral" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="drawer-title">Menú</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">✕</button>
+  </div>
+
+  <ul class="drawer-links">
+    <li><a class="drawer-link" href="index.html">Inicio</a></li>
+
+    <!-- ACERCA DE (ACORDEÓN MÓVIL) -->
+    <li class="drawer-accordion" id="drawerAboutAccordion">
+      <button class="drawer-link drawer-accordion-btn" id="drawerAboutBtn" aria-expanded="false">
+        Acerca de <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <ul class="drawer-sublist" id="drawerAboutMenu" aria-label="Acerca de (móvil)">
+        <li><a href="about.html">Quiénes somos</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="vision.html">Visión</a></li>
+      </ul>
+    </li>
+
+    <!-- CURSOS (ACORDEÓN MÓVIL + DINÁMICO) -->
+    <li class="drawer-accordion" id="drawerCoursesAccordion">
+      <button class="drawer-link drawer-accordion-btn" id="drawerCoursesBtn" aria-expanded="false">
+        Cursos <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <ul class="drawer-sublist" id="drawerCoursesMenu" aria-label="Cursos (móvil)">
+        <!-- JS llena esto -->
+      </ul>
+    </li>
+
+    <li><a class="drawer-link" href="planes.html">Planes</a></li>
+    <li><a class="drawer-link" href="contact.html">Contacto</a></li>
+
+    <li><a class="drawer-link drawer-cta" href="login.html">Inicia sesión / Regístrate</a></li>
+  </ul>
+</aside>
+
+<script src="../src/js/nav.js" defer></script>
+</body>
 </html>

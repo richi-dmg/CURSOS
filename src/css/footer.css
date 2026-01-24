@@ -1,0 +1,250 @@
+/* =========================
+   VARIABLES (colores, tamaños)
+   ========================= */
+:root {
+  --footer-bg: #ffffff;              /* fondo del footer */
+  --footer-text: #1f2937;            /* texto principal */
+  --footer-muted: #6b7280;           /* texto secundario */
+  --footer-border: #e5e7eb;          /* líneas/bordes suaves */
+  --footer-accent: #14b8a6;          /* color acento (links / iconos) */
+  --container: 1200px;               /* ancho máximo del contenido */
+  --radius: 14px;                    /* borde redondeado */
+}
+
+/* Dark mode automático (si tu logo ya cambia con <picture>) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --footer-bg: #0b1220;
+    --footer-text: #e5e7eb;
+    --footer-muted: #94a3b8;
+    --footer-border: #1f2a3a;
+    --footer-accent: #2dd4bf;
+  }
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+   ========================= */
+.site-footer {
+  background: var(--footer-bg);      /* aplica el fondo definido */
+  color: var(--footer-text);         /* color del texto */
+  border-top: 1px solid var(--footer-border); /* línea superior para separar del contenido */
+}
+
+/* =========================
+   GRID PRINCIPAL (4 columnas)
+   ========================= */
+.footer-container {
+  max-width: var(--container);       /* limita el ancho para que no se estire demasiado */
+  margin: 0 auto;                    /* centra el contenedor horizontalmente */
+  padding: 56px 20px;                /* espacio interno arriba/abajo y laterales */
+  display: grid;                     /* activa grid layout */
+  grid-template-columns: 1.2fr 1fr 1fr 1fr; /* 4 columnas (la primera un poco más ancha) */
+  gap: 44px;                         /* separación entre columnas */
+  align-items: start;                /* alinea el contenido al inicio vertical (arriba) */
+}
+
+/* Responsive: en pantallas medianas pasa a 2 columnas */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;  /* 2 columnas */
+    gap: 28px;                       /* reduce separación */
+  }
+}
+
+/* Responsive: en móviles pasa a 1 columna */
+@media (max-width: 560px) {
+  .footer-container {
+    grid-template-columns: 2fr;      /* 1 columna */
+  }
+  /* ---- FOLLOW US (iconos) ---- */
+  .social {
+    display: flex;                 /* asegura flex */
+    justify-content: center;       /* centra horizontalmente */
+    align-items: center;           /* centra verticalmente */
+    gap: 14px;                     /* espacio uniforme */
+    width: 100%;
+    margin: 0 auto;                /* centra el bloque */
+  }
+
+  .social-btn {
+    flex: 0 0 auto;                /* evita que se estiren */
+  }
+
+  /* ---- COPYRIGHT ---- */
+  .footer-bottom-inner {
+    display: flex;
+    flex-direction: column;        /* apila elementos */
+    align-items: center;           /* centra todo */
+    text-align: center;            /* centra texto */
+    gap: 14px;
+  }
+
+  .footer-bottom-inner p {
+    width: 100%;
+    text-align: center;            /* centra “Todos los derechos” */
+  }
+
+  /* ---- TÉRMINOS / PRIVACIDAD / COOKIES ---- */
+  .footer-bottom-links {
+    display: flex;
+    justify-content: center;       /* centra el grupo */
+    align-items: center;
+    gap: 20px;                     /* separación pareja */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-bottom-links li {
+    flex: 0 0 auto;                /* no se estiran */
+    text-align: center;
+  }
+}
+
+
+/* =========================
+   COLUMNA MARCA / LOGO
+   ========================= */
+.footer-brand .footer-logo {
+  display: inline-flex;              /* permite alinear el logo como “cajita flexible” */
+  align-items: center;               /* centra verticalmente el contenido del logo */
+  gap: 10px;                         /* separación interna si agregas texto/logo */
+  margin-bottom: 14px;               /* espacio debajo del logo */
+  text-decoration: none;             /* quita subrayado del enlace */
+}
+
+.footer-contact {
+  list-style: none;                  /* quita viñetas */
+  padding: 0;                        /* quita padding por defecto del ul */
+  margin: 0;                         /* quita margen por defecto del ul */
+  display: grid;                     /* organiza items ordenados */
+  gap: 10px;                         /* separación entre líneas */
+  color: var(--footer-muted);        /* color secundario para contacto */
+}
+
+.footer-contact .label {
+  font-weight: 600;                  /* resalta “Email/Teléfono/Dirección” */
+  color: var(--footer-text);         /* el label se ve más fuerte que el resto */
+  margin-right: 6px;                 /* espacio entre label y valor */
+}
+
+.footer-contact a {
+  color: var(--footer-accent);       /* link con color acento */
+  text-decoration: none;             /* sin subrayado */
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;        /* subrayado al pasar el mouse */
+}
+
+/* =========================
+   TÍTULOS Y LISTAS
+   ========================= */
+.footer-title {
+  font-size: 18px;                   /* tamaño del título */
+  margin: 0 0 14px;                  /* espacio debajo del título */
+  font-weight: 700;                  /* título más marcado */
+  letter-spacing: 0.2px;             /* micro espaciado para legibilidad */
+}
+
+.footer-list {
+  list-style: none;                  /* sin viñetas */
+  padding: 0;                        /* sin padding */
+  margin: 0;                         /* sin margen */
+  display: grid;                     /* lista ordenada */
+  gap: 10px;                         /* separación vertical */
+}
+
+.footer-list a {
+  color: var(--footer-muted);        /* links en tono secundario */
+  text-decoration: none;             /* sin subrayado */
+  transition: color 180ms ease;      /* transición suave al hover */
+}
+
+.footer-list a:hover {
+  color: var(--footer-text);         /* se oscurece al hover */
+}
+
+/* =========================
+   REDES SOCIALES (ICONOS)
+   ========================= */
+.social {
+  display: flex;                     /* pone íconos en fila */
+  align-items: center;               /* centra verticalmente los íconos */
+  gap: 12px;                         /* separación entre botones */
+  margin-top: 6px;                   /* espacio respecto al título */
+}
+
+.social-btn {
+  width: 44px;                       /* tamaño del botón */
+  height: 44px;                      /* tamaño del botón */
+  display: inline-flex;              /* para centrar el svg dentro */
+  align-items: center;               /* centra verticalmente el svg */
+  justify-content: center;           /* centra horizontalmente el svg */
+  border: 1px solid var(--footer-border); /* borde suave */
+  border-radius: var(--radius);      /* esquinas redondeadas */
+  color: var(--footer-accent);       /* color del icono (usa currentColor) */
+  background: transparent;           /* sin fondo */
+  transition: transform 150ms ease, border-color 150ms ease; /* animación suave */
+  text-decoration: none;             /* sin subrayado */
+}
+
+.social-btn:hover {
+  transform: translateY(-1px);       /* levanta un poquito el botón */
+  border-color: var(--footer-accent);/* borde acento al hover */
+}
+
+.social-btn svg {
+  width: 20px;                       /* tamaño del icono */
+  height: 20px;                      /* tamaño del icono */
+  fill: currentColor;                /* el svg toma el color del botón */
+}
+
+/* =========================
+   BARRA INFERIOR
+   ========================= */
+.footer-bottom {
+  border-top: 1px solid var(--footer-border); /* línea divisoria */
+}
+
+.footer-bottom-inner {
+  max-width: var(--container);       /* mismo ancho que arriba */
+  margin: 0 auto;                    /* centra */
+  padding: 18px 20px;                /* espacio interno */
+  display: flex;                     /* pone texto y links en fila */
+  align-items: center;               /* centra verticalmente */
+  justify-content: space-between;    /* separa izquierda/derecha */
+  gap: 16px;                         /* separación si se apilan */
+  color: var(--footer-muted);        /* texto tenue */
+}
+
+/* En móvil, apila la barra inferior */
+@media (max-width: 560px) {
+  .footer-bottom-inner {
+    flex-direction: column;          /* apila verticalmente */
+    align-items: flex-start;         /* alinea a la izquierda */
+  }
+}
+
+.footer-bottom p {
+  margin: 0;                         /* quita margen por defecto */
+}
+
+.footer-bottom-links {
+  list-style: none;                  /* sin viñetas */
+  padding: 0;                        /* sin padding */
+  margin: 0;                         /* sin margen */
+  display: flex;                     /* links en línea */
+  align-items: center;               /* centra verticalmente */
+  gap: 14px;                         /* separación */
+}
+
+.footer-bottom-links a {
+  color: var(--footer-muted);        /* mismo tono tenue */
+  text-decoration: none;             /* sin subrayado */
+}
+
+.footer-bottom-links a:hover {
+  color: var(--footer-text);         /* sube contraste al hover */
+}
