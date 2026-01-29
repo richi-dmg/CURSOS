@@ -1,0 +1,216 @@
+:root {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 90px;
+      background: #14b8a6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+.hero {
+      height: 70vh;
+      background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+            color: white;
+      padding: 40px;
+      text-align: center;
+      max-width: 700px;
+      border-radius: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-content h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-content p {
+      margin-bottom: 24px;
+    }
+
+/* ===== BENEFICIOS ===== */
+.benefits-section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.benefits {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.benefit {
+  background: #f9f9f9;
+  padding: 24px;
+  border-radius: 12px;
+  
+}
+
+.benefit span {
+font-size: 32px;
+display: block;
+margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+ .benefits {
+  flex-direction: column;
+}
+}
+
+  /* =====BANNER CURSOS ===== */
+  .courses-banner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+       }
+
+    .courses-text {
+      width: 50%;
+    }
+
+    .courses-image {
+      width: 50%;
+      
+    }
+
+    .courses-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+      .btn-2 {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #14b8a6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    
+    @media (max-width: 768px) {
+      .courses-banner {
+        flex-direction: column;
+      }
+
+      .courses-text,
+      .courses-image {
+        width: 100%;
+      }
+    }
+
+    .btn-2 {
+      display: inline-block;
+      padding: 12px 50px;
+      background: #14b8a6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    /* ===== TESTIMONIOS ===== */
+ .testimonials {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.testimonials-wrapper {
+  max-width: 1100px;
+  min-width: 320px;
+  margin: 0 auto; 
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 20px;  
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.testimonial {
+  min-width: 280px;
+  background: #f9f9f9;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.testimonial p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.testimonial strong {
+  display: block;
+}
+
+.testimonial span {
+  font-size: 13px;
+  color: gray;
+}
+
+.stars {
+  color: gold;
+  margin-top: 8px;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+
+  /* ===== Preguntas frecuentes ===== */
+  .faq {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  details {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+  }

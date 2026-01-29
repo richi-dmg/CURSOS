@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto</title>
+
+<link rel="stylesheet" href="/src/css/nav.css"> 
+<link rel="stylesheet" href="/src/css/footer.css"> 
+
+  <link rel="stylesheet" href="/src/css/contacto.css" />
+</head>
+
+<body>
+ 
+  <div id="nav-container"></div> 
+
+  <main class="contact">
+    <section class="panel panel--form" aria-label="Formulario de contacto">
+      <header class="head">
+        <h1>Contacto</h1>
+        <p class="muted">
+          Cuéntanos qué curso te interesa y te responderemos lo antes posible.
+        </p>
+      </header>
+
+      <form id="contactForm" class="form" novalidate>
+        <div class="grid">
+          <div class="field" id="nameField">
+            <input id="nombre" name="nombre" type="text" placeholder=" " autocomplete="name" />
+            <label for="nombre">Nombre</label>
+            <p class="error" id="nameError" aria-live="polite"></p>
+          </div>
+
+          <div class="field" id="emailField">
+            <input id="email" name="email" type="text" placeholder=" " inputmode="email" autocomplete="email" />
+            <label for="email">Correo</label>
+            <p class="error" id="emailError" aria-live="polite"></p>
+          </div>
+
+          <div class="field" id="countryField">
+            <select id="pais" name="pais" aria-describedby="paisHelp">
+              <option value="">Selecciona tu país</option>
+              <option value="Perú">Perú</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="México">México</option>
+              <option value="España">España</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Estados Unidos">Estados Unidos</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label for="pais" class="label-static">País</label>
+            <p class="help muted" id="paisHelp">Lo detectamos automáticamente si es posible.</p>
+            <p class="error" id="paisError" aria-live="polite"></p>
+          </div>
+
+          <div class="field" id="otherCountryField" hidden>
+            <input id="paisOtro" name="paisOtro" type="text" placeholder=" " />
+            <label for="paisOtro">Especifica tu país</label>
+            <p class="error" id="paisOtroError" aria-live="polite"></p>
+          </div>
+
+          <div class="field" id="phoneField">
+            <input id="telefono" name="telefono" type="tel" placeholder=" " inputmode="tel" autocomplete="tel" />
+            <label for="telefono">Teléfono (opcional)</label>
+            <p class="help muted">Ej: +51 999 999 999</p>
+            <p class="error" id="phoneError" aria-live="polite"></p>
+          </div>
+
+          <div class="field" id="courseField">
+            <select id="curso" name="curso">
+              <option value="">Curso de interés</option>
+              <option value="Excel">Excel</option>
+              <option value="Power BI">Power BI</option>
+              <option value="SQL Server">SQL Server</option>
+              <option value="Ciberseguridad">Ciberseguridad</option>
+              <option value="Desarrollo Web (Front End)">Desarrollo Web (Front End)</option>
+              <option value="Azure / Cloud">Azure / Cloud</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label for="curso" class="label-static">Curso</label>
+            <p class="error" id="courseError" aria-live="polite"></p>
+          </div>
+
+          <div class="field field--full" id="msgField">
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder=" "></textarea>
+            <label for="mensaje">Mensaje</label>
+            <p class="error" id="msgError" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <button id="btnSend" class="btn" type="submit">
+          <span class="btn__text">Enviar</span>
+          <span class="btn__spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="note muted">
+          Al enviar aceptas que usemos tus datos solo para responderte.
+        </p>
+      </form>
+
+      <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    </section>
+
+    <section class="panel panel--map" aria-label="Mapa de Lima">
+      <div class="mapHead">
+        <h2>Lima, Perú</h2>
+        <p class="muted">Referencia (mapa embebido).</p>
+      </div>
+
+      <div class="mapWrap">
+        <!-- Mapa Lima (genérico). Puedes cambiar el query si quieres un punto exacto -->
+        <iframe
+          title="Mapa de Lima"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Lima%20Per%C3%BA&output=embed">
+        </iframe>
+      </div>
+
+      <div class="contactInfo">
+        <div class="infoCard">
+          <h3>Horarios</h3>
+          <p class="muted">Lun–Vie: 9:00–18:00</p>
+        </div>
+        <div class="infoCard">
+          <h3>Correo</h3>
+          <p class="muted"><a href="mailto:contacto@tusitio.com">contacto@tusitio.com</a></p>
+        </div>
+        <div class="infoCard">
+          <h3>WhatsApp</h3>
+          <p class="muted"><a href="#">+51 999 999 999</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<div id="footer-container"></div>
+    <script src="../../src/js/nav.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/contacto.js"></script>
+</body>
+</html>

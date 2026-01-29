@@ -1,21 +1,28 @@
-fetch("/public/nav.html")
-  .then(response => response.text())
-  .then(html => {
-    document.getElementById("nav-container").innerHTML = html;
-  })
-  .catch(error => console.error("Error loading navigation:", error));
-
-  /* =========================
+/* =========================
    CONFIG: Cursos (editar aquí)
    ========================= */
 const NAV_COURSES = [
-  { text: "Excel desde cero", href: "curso-excel.html" },
-  { text: "Power BI básico", href: "curso-powerbi.html" },
-  { text: "Introducción a SQL", href: "curso-sql.html" },
-  { text: "Ciberseguridad esencial", href: "curso-ciberseguridad.html" },
+  { text: "Data & Automatización", href: "curso-data.html" },
+  { text: "Desarrollo Web Full Stack", href: "curso-fullstack.html" },
+  { text: "JavaScript desde Básico a Intermedio", href: "curso-js.html" },
+  { text: "Python para Principiante", href: "curso-python.html" },
+  { text: "Programación Web", href: "curso-web.html" },
+  { text: "UX/UI Design", href: "curso-ux-ui.html" },
 ];
 
-document.addEventListener("DOMContentLoaded", () => { 
+fetch("/public/nav.html")
+  .then((response) => response.text())
+  .then((html) => {
+    const container = document.getElementById("nav-container");
+    if (!container) return;
+    container.innerHTML = html;
+
+    // ✅ CLAVE: inicializar DESPUÉS de inyectar
+    initNav();
+  })
+  .catch((error) => console.error("Error loading navigation:", error));
+
+function initNav() {
   const $ = (id) => document.getElementById(id);
 
   // Render cursos (desktop + móvil)
@@ -72,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // IMPORTANTE: no cerrar si haces click dentro del dropdown desktop
+  // No cerrar si haces click dentro del dropdown desktop
   document.querySelectorAll(".dropdown").forEach((menu) => {
     menu.addEventListener("click", (e) => e.stopPropagation());
   });
@@ -121,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (drawerAboutBtn && drawerAboutAcc) {
     drawerAboutBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // clave para que no “coma” clicks de links
+      e.stopPropagation();
       toggleAcc(drawerAboutAcc, drawerAboutBtn);
     });
   }
@@ -133,12 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CLAVE: deja pasar clicks a los links internos sin que el acordeón “capture”
+  // Links dentro del drawer: cerrar al navegar
   document.querySelectorAll(".drawer-sublist a").forEach((a) => {
     a.addEventListener("click", (e) => {
-      // No hacemos preventDefault. Solo evitamos burbujeo si tu layout lo cierra.
       e.stopPropagation();
-      closeDrawer(); // opcional: al tocar un link, cierra el menú
+      closeDrawer();
     });
   });
 
@@ -148,4 +154,5 @@ document.addEventListener("DOMContentLoaded", () => {
       closeDrawer();
     }
   });
-});
+}
+
